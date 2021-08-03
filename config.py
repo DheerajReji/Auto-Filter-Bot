@@ -44,3 +44,10 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 def LOGGER(name: str) -> logging.Logger:
     return logging.getLogger(name)
+
+OMDB_API_KEY = environ.get("OMDB_API_KEY", "")
+
+if OMDB_API_KEY.strip() == "":
+    API_KEY=None
+else:
+    API_KEY=OMDB_API_KEY
