@@ -26,6 +26,13 @@ TG_BOT_SESSION = os.environ.get("TG_BOT_SESSION", "bot")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 LOG_FILE_NAME = "filterbot.txt"
 
+OMDB_API_KEY = environ.get("OMDB_API_KEY", "")
+
+if OMDB_API_KEY.strip() == "":
+    API_KEY=None
+else:
+    API_KEY=OMDB_API_KEY
+
 logging.basicConfig(
     level=logging.INFO,
     format="[%(asctime)s - %(levelname)s] - %(name)s - %(message)s",
